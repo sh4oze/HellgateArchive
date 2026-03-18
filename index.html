@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOOM — id Software 1993 & 1995</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
+<!-- External stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DOOM</div>
+  <ul class="nav-links">
+    <li><a href="#lore">História</a></li>
+    <li><a href="#games">Jogos</a></li>
+    <li><a href="#arsenal">Arsenal</a></li>
+    <li><a href="#bestiary">Bestiário</a></li>
+    <li><a href="#music">Música</a></li>
+    <li><a href="#legacy">Legado</a></li>
+    <li><a href="#creators">Criadores</a></li>
+  </ul>
+</nav>
+
+<!-- HUD -->
+<div class="health-hud">
+  <div class="hud-row"><span>SAÚDE</span><span class="hud-val" id="hud-hp">100%</span></div>
+  <div class="hud-row"><span>MUNIÇÃO</span><span class="hud-val">∞</span></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <span class="hero-year-left">93</span>
+  <span class="hero-year-right">95</span>
+  <div class="hero-content">
+    <p class="hero-eyebrow">id Software Presents</p>
+    <h1 class="hero-title">DOOM</h1>
+    <p class="hero-subtitle">The Original Hell on Earth</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="val">1993</span>
+        <span class="lbl">Doom I</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">1995</span>
+        <span class="lbl">Doom II</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">36+</span>
+        <span class="lbl">níveis</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">10M+</span>
+        <span class="lbl">cópias</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">ROLE PARA BAIXO</div>
+</section>
+
+<!-- LORE -->
+<section id="lore">
+  <div class="lore-inner">
+    <div class="section-label">Origem</div>
+    <h2 class="section-title">A História<br>do Inferno</h2>
+    <div class="lore-grid">
+      <div class="lore-text reveal">
+        <p>Em <strong>dezembro de 1993</strong>, a id Software lançou Doom — e o mundo dos videogames nunca mais seria o mesmo. Desenvolvido por uma equipe de menos de dez pessoas em apenas um ano, o jogo redefiniu o que era possível em termos de velocidade, violência e imersão.</p>
+        <p>O jogador incorpora o <strong>Doom Slayer</strong> (ou simplesmente "Doomguy"), um fuzileiro naval em Marte que sobrevive a uma invasão demoníaca desencadeada por experimentos secretos com portais interdimensionais. Sem heróis em armaduras reluzentes — apenas você, uma escopeta e hordas de criaturas do inferno.</p>
+        <div class="lore-quote">
+          <p>"You are the last line of defense against the forces of Hell."</p>
+          <cite>— Manual original de DOOM, 1993</cite>
+        </div>
+        <p>Em <strong>1995</strong>, Doom II: Hell on Earth expandiu tudo: mais inimigos, mais armas, mais níveis — e o inferno chegou à Terra. A icônica <em>Super Shotgun</em> e o terrível <em>Cyberdemon</em> tornaram-se símbolos de uma era.</p>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <div style="background:var(--pit); padding:3rem; border-left:3px solid var(--blood);">
+          <p style="font-family:'Share Tech Mono',monospace; font-size:0.75rem; line-height:2; color:var(--smoke); letter-spacing:0.1em;">
+            <span style="color:var(--blood)">▶</span> DOOM foi distribuído como shareware<br>
+            <span style="color:var(--blood)">▶</span> Instalado em 10 milhões de PCs em 2 anos<br>
+            <span style="color:var(--blood)">▶</span> Gerou o gênero First-Person Shooter moderno<br>
+            <span style="color:var(--blood)">▶</span> Motor 3D proprietário (id Tech 1)<br>
+            <span style="color:var(--blood)">▶</span> Suporte a multiplayer via LAN (deathmatch)<br>
+            <span style="color:var(--blood)">▶</span> Primeiro jogo com modding em larga escala<br>
+            <span style="color:var(--blood)">▶</span> Censurado em vários países após lançamento<br>
+            <span style="color:var(--blood)">▶</span> Porta para praticamente toda plataforma existente<br>
+          </p>
+        </div>
+        <div class="lore-ascii" style="margin-top:2rem; font-size:0.55rem;">
+ ██████╗  ██████╗  ██████╗ ███╗   ███╗
+ ██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║
+ ██║  ██║██║   ██║██║   ██║██╔████╔██║
+ ██║  ██║██║   ██║██║   ██║██║╚██╔╝██║
+ ██████╔╝╚██████╔╝╚██████╔╝██║ ╚═╝ ██║
+ ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝     ╚═╝
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <div class="games-inner">
+    <div class="games-header reveal">
+      <div class="section-label">Catálogo</div>
+      <h2 class="section-title">Os Dois<br>Clássicos</h2>
+    </div>
+    <div class="games-cards">
+      <!-- DOOM 1 -->
+      <div class="game-card reveal">
+        <div class="game-card-bg doom1-bg"></div>
+        <!-- SVG pentagram bg -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.05" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="200,30 370,280 100,150 300,150 30,280" stroke="#c0392b" stroke-width="1.5" fill="none"/>
+          <circle cx="200" cy="250" r="180" stroke="#c0392b" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="game-card-overlay"></div>
+        <div class="game-card-content">
+          <span class="game-tag">DOOM — 1993</span>
+          <div class="game-number">I</div>
+          <div class="game-name">Doom</div>
+          <span class="game-year-badge">Dezembro 1993</span>
+          <p class="game-desc">O jogo que iniciou tudo. Você é o único sobrevivente de uma instalação marciana depois que portais do inferno se abrem. Três episódios, 27 mapas, terror e adrenalina puras.</p>
+          <div class="game-stats">
+            <div class="game-stat"><span class="n">3</span><span class="l">Episódios</span></div>
+            <div class="game-stat"><span class="n">27</span><span class="l">Mapas</span></div>
+            <div class="game-stat"><span class="n">8</span><span class="l">Armas</span></div>
+            <div class="game-stat"><span class="n">10</span><span class="l">Inimigos</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- DOOM II -->
+      <div class="game-card reveal" style="transition-delay:0.15s">
+        <div class="game-card-bg doom2-bg"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.05" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <rect x="60" y="60" width="280" height="380" stroke="#c0392b" stroke-width="1" fill="none"/>
+          <line x1="60" y1="60" x2="340" y2="440" stroke="#c0392b" stroke-width="1"/>
+          <line x1="340" y1="60" x2="60" y2="440" stroke="#c0392b" stroke-width="1"/>
+          <circle cx="200" cy="250" r="100" stroke="#c0392b" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="game-card-overlay"></div>
+        <div class="game-card-content">
+          <span class="game-tag">DOOM II — 1995</span>
+          <div class="game-number">II</div>
+          <div class="game-name">Hell on Earth</div>
+          <span class="game-year-badge">Setembro 1994 / PC · 1995</span>
+          <p class="game-desc">O inferno chegou à Terra. Doom II expande o universo com 30 novos mapas, a devastadora Super Shotgun e inimigos ainda mais mortais. O clímax do universo clássico.</p>
+          <div class="game-stats">
+            <div class="game-stat"><span class="n">1</span><span class="l">Episódio</span></div>
+            <div class="game-stat"><span class="n">30</span><span class="l">Mapas</span></div>
+            <div class="game-stat"><span class="n">9</span><span class="l">Armas</span></div>
+            <div class="game-stat"><span class="n">17</span><span class="l">Inimigos</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARSENAL -->
+<section id="arsenal">
+  <div class="arsenal-inner">
+    <div class="section-label reveal">Armamento</div>
+    <h2 class="section-title reveal">Arsenal<br>do Inferno</h2>
+    <div class="weapons-grid">
+      <div class="weapon-card reveal">
+        <span class="weapon-icon">👊</span>
+        <div class="weapon-slot">Slot 1</div>
+        <div class="weapon-name">Soco / Motosserra</div>
+        <p class="weapon-desc">Para quando as balas acabam. A motosserra é o pesadelo silencioso — sem munição, sem limite.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar"></div>
+          <div class="weapon-dmg-bar"></div>
+          <div class="weapon-dmg-bar"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.1s">
+        <span class="weapon-icon">🔫</span>
+        <div class="weapon-slot">Slot 2</div>
+        <div class="weapon-name">Pistola</div>
+        <p class="weapon-desc">Seu ponto de partida. Confiável, mas você vai querer algo maior bem rápido.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar"></div>
+          <div class="weapon-dmg-bar"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.2s">
+        <span class="weapon-icon">💥</span>
+        <div class="weapon-slot">Slot 3</div>
+        <div class="weapon-name">Escopeta</div>
+        <p class="weapon-desc">A espinha dorsal do combate em Doom. Sete projéteis por disparo, curto alcance, devastadora.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.3s">
+        <span class="weapon-icon">⚡</span>
+        <div class="weapon-slot">Slot 3 — DOOM II</div>
+        <div class="weapon-name">Super Shotgun</div>
+        <p class="weapon-desc">A lendária escopeta dupla de Doom II. Vinte projéteis simultâneos. Destrói qualquer coisa próxima.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal">
+        <span class="weapon-icon">🌀</span>
+        <div class="weapon-slot">Slot 4</div>
+        <div class="weapon-name">Chaingun</div>
+        <p class="weapon-desc">Metralha sem parar. Taxa de fogo altíssima com a precisão de uma pistola — letal à distância.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.1s">
+        <span class="weapon-icon">🚀</span>
+        <div class="weapon-slot">Slot 5</div>
+        <div class="weapon-name">Rocket Launcher</div>
+        <p class="weapon-desc">Alta explosão, dano em área. Perigoso em espaços fechados — para você também. Perfeito para grupos.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.2s">
+        <span class="weapon-icon">☢️</span>
+        <div class="weapon-slot">Slot 6</div>
+        <div class="weapon-name">Plasma Rifle</div>
+        <p class="weapon-desc">Projéteis de plasma em rajada. Rápido, eficaz, consome energia rápido. Uma das armas mais satisfatórias do jogo.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+        </div>
+      </div>
+      <div class="weapon-card reveal" style="transition-delay:0.3s">
+        <span class="weapon-icon">💀</span>
+        <div class="weapon-slot">Slot 7</div>
+        <div class="weapon-name">BFG 9000</div>
+        <p class="weapon-desc">Big Fucking Gun. Uma bola de plasma que elimina salas inteiras. A arma definitiva. Raramente necessária — sempre satisfatória.</p>
+        <div class="weapon-dmg">
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+          <div class="weapon-dmg-bar fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BESTIARY -->
+<section id="bestiary">
+  <div class="bestiary-inner">
+    <div class="section-label reveal">Classificação Demoníaca</div>
+    <h2 class="section-title reveal">Bestiário<br>do Abismo</h2>
+    <div class="enemy-list">
+
+      <div class="enemy-card reveal">
+        <div class="enemy-num">01</div>
+        <div>
+          <div class="enemy-name">Zombie</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Ex-soldados humanos reanimados pelos demônios. Fracos, mas surgem em grupos. O primeiro a aparecer e o mais fácil de derrubar.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.08s">
+        <div class="enemy-num">02</div>
+        <div>
+          <div class="enemy-name">Imp</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Demônio ágil que lança bolas de fogo. Símbolo visual de Doom. Aparece em todos os episódios e nunca deixa de ser uma ameaça real.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.16s">
+        <div class="enemy-num">03</div>
+        <div>
+          <div class="enemy-name">Pinky Demon</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Criatura cor-de-rosa com mordida devastadora. Rápida e resistente, especialmente perigosa em corredores estreitos.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal">
+        <div class="enemy-num">04</div>
+        <div>
+          <div class="enemy-name">Cacodemon</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Esfera flutuante com um olho enorme e boca cheia de dentes. Cospe bolas de plasma e é tão icônico quanto o próprio Doom.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.08s">
+        <div class="enemy-num">05</div>
+        <div>
+          <div class="enemy-name">Baron of Hell</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Demônio enorme com chifres e peito verde. O chefe final do episódio 1. Resistente e agressivo — pedir uma escopeta não vai resolver.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.16s">
+        <div class="enemy-num">06</div>
+        <div>
+          <div class="enemy-name">Cyberdemon</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">Um minotauro cibernético armado com um lançador de foguetes. O inimigo mais assustador do Doom original. Requer centenas de acertos para cair.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal">
+        <div class="enemy-num">07</div>
+        <div>
+          <div class="enemy-name">Spider Mastermind</div>
+          <span class="enemy-game-badge">Doom I + II</span>
+          <p class="enemy-desc">A chefe final do Doom I. Um cérebro gigante montado sobre pernas mecânicas com uma metralhadora de cadência altíssima. Memorável e mortal.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.08s">
+        <div class="enemy-num">08</div>
+        <div>
+          <div class="enemy-name">Mancubus</div>
+          <span class="enemy-game-badge">Doom II</span>
+          <p class="enemy-desc">Exclusivo de Doom II. Obeso e lento, mas lança rajadas de fogo dos dois braços. Requer mobilidade para evitar seus projéteis.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+      <div class="enemy-card reveal" style="transition-delay:0.16s">
+        <div class="enemy-num">09</div>
+        <div>
+          <div class="enemy-name">Arch-Vile</div>
+          <span class="enemy-game-badge">Doom II</span>
+          <p class="enemy-desc">O inimigo mais temido de Doom II. Ressuscita os mortos e causa dano em área com chamas. Destruí-lo é urgente — ignorá-lo é mortal.</p>
+        </div>
+        <div class="enemy-hp-bar"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="music-inner">
+    <div class="section-label reveal">Trilha Sonora</div>
+    <h2 class="section-title reveal">O Som<br>do Apocalipse</h2>
+    <div class="music-grid">
+      <div class="reveal">
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--ash);font-weight:300;margin-bottom:2rem;">
+          Bobby Prince compôs a trilha sonora de ambos os jogos, mesclando <strong style="color:var(--bone)">heavy metal</strong>, <strong style="color:var(--bone)">industrial</strong> e <strong style="color:var(--bone)">música ambiente</strong>. Inspirado em bandas como Alice in Chains, Metallica e Slayer, Prince criou um som que definia a tensão de cada ambiente — do espaço industrial de Marte até o caos das ruas de uma Terra tomada pelo inferno.
+        </p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--ash);font-weight:300;margin-bottom:2rem;">
+          As músicas eram arquivos MIDI que tocavam em loop — mas Bobby Prince as compôs como peças completas, com introduções, variações e clímax. O resultado foi trilhas que ficaram gravadas na memória de uma geração.
+        </p>
+        <div style="border:1px solid rgba(192,57,43,0.2);padding:2rem;background:var(--pit);">
+          <p style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;color:var(--blood);margin-bottom:1rem;">COMPOSITOR</p>
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--bone);margin-bottom:0.25rem;">Bobby Prince</p>
+          <p style="font-size:0.9rem;color:var(--smoke);">Músico e advogado texano que criou as trilhas de Doom I e II. Seu trabalho influenciou décadas de música em videogames.</p>
+        </div>
+      </div>
+      <div class="reveal music-panel" style="transition-delay:0.2s">
+        <div class="music-player-shell">
+          <div class="music-player-head">
+            <p class="music-panel-label">TERMINAL DE ÁUDIO</p>
+            <div class="music-status-line">
+              <span class="music-status-dot"></span>
+              <span id="music-status">AGUARDANDO SELEÇÃO</span>
+            </div>
+          </div>
+
+          <div class="music-now-playing-box">
+            <p class="music-now-playing-label">Tocando agora</p>
+            <h3 id="now-playing">Nenhuma faixa selecionada</h3>
+            <p id="now-playing-origin">Selecione uma música da lista para iniciar a reprodução.</p>
+          </div>
+
+          <audio id="doom-player" class="doom-player" controls preload="none">
+            Seu navegador não suporta áudio HTML5.
+          </audio>
+
+          <div class="music-help">
+          </div>
+        </div>
+
+        <p class="music-group-title">DOOM I — FAIXAS ICÔNICAS</p>
+        <div class="track-list">
+          <button class="track-item" type="button" data-audio="musicas/at-dooms-gate.mp3" data-title="At Doom's Gate" data-origin="DOOM I · Hangar — Episódio 1">
+            <span class="track-num">E1M1</span>
+            <div class="track-info">
+              <div class="track-name">At Doom's Gate</div>
+              <div class="track-level">Hangar — Episódio 1</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:12px"></div>
+              <div class="wave-bar" style="height:20px"></div>
+              <div class="wave-bar" style="height:8px"></div>
+              <div class="wave-bar" style="height:16px"></div>
+              <div class="wave-bar" style="height:24px"></div>
+              <div class="wave-bar" style="height:10px"></div>
+              <div class="wave-bar" style="height:18px"></div>
+            </div>
+          </button>
+          <button class="track-item" type="button" data-audio="musicas/dark-halls.mp3" data-title="Dark Halls" data-origin="DOOM I · Toxin Refinery">
+            <span class="track-num">E1M3</span>
+            <div class="track-info">
+              <div class="track-name">Dark Halls</div>
+              <div class="track-level">Toxin Refinery</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:14px"></div>
+              <div class="wave-bar" style="height:8px"></div>
+              <div class="wave-bar" style="height:22px"></div>
+              <div class="wave-bar" style="height:16px"></div>
+              <div class="wave-bar" style="height:12px"></div>
+              <div class="wave-bar" style="height:20px"></div>
+              <div class="wave-bar" style="height:6px"></div>
+            </div>
+          </button>
+          <button class="track-item" type="button" data-audio="musicas/sign-of-evil.mp3" data-title="Sign of Evil" data-origin="DOOM I · Phobos Anomaly — Boss">
+            <span class="track-num">E1M8</span>
+            <div class="track-info">
+              <div class="track-name">Sign of Evil</div>
+              <div class="track-level">Phobos Anomaly — Boss</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:6px"></div>
+              <div class="wave-bar" style="height:14px"></div>
+              <div class="wave-bar" style="height:22px"></div>
+              <div class="wave-bar" style="height:18px"></div>
+              <div class="wave-bar" style="height:10px"></div>
+              <div class="wave-bar" style="height:16px"></div>
+              <div class="wave-bar" style="height:24px"></div>
+            </div>
+          </button>
+        </div>
+        <p class="music-group-title">DOOM II — FAIXAS ICÔNICAS</p>
+        <div class="track-list">
+          <button class="track-item" type="button" data-audio="musicas/running-from-evil.mp3" data-title="Running From Evil" data-origin="DOOM II · Entryway">
+            <span class="track-num">MAP01</span>
+            <div class="track-info">
+              <div class="track-name">Running From Evil</div>
+              <div class="track-level">Entryway</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:22px"></div>
+              <div class="wave-bar" style="height:16px"></div>
+              <div class="wave-bar" style="height:10px"></div>
+              <div class="wave-bar" style="height:20px"></div>
+              <div class="wave-bar" style="height:14px"></div>
+              <div class="wave-bar" style="height:8px"></div>
+              <div class="wave-bar" style="height:18px"></div>
+            </div>
+          </button>
+          <button class="track-item" type="button" data-audio="musicas/shawns-got-the-shotgun.mp3" data-title="Shawn's Got The Shotgun" data-origin="DOOM II · Dead Simple">
+            <span class="track-num">MAP07</span>
+            <div class="track-info">
+              <div class="track-name">Shawn's Got The Shotgun</div>
+              <div class="track-level">Dead Simple</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:10px"></div>
+              <div class="wave-bar" style="height:20px"></div>
+              <div class="wave-bar" style="height:14px"></div>
+              <div class="wave-bar" style="height:24px"></div>
+              <div class="wave-bar" style="height:8px"></div>
+              <div class="wave-bar" style="height:18px"></div>
+              <div class="wave-bar" style="height:12px"></div>
+            </div>
+          </button>
+          <button class="track-item" type="button" data-audio="musicas/into-sandys-city.mp3" data-title="Into Sandy's City" data-origin="DOOM II · Icon of Sin — Final">
+            <span class="track-num">MAP30</span>
+            <div class="track-info">
+              <div class="track-name">Into Sandy's City</div>
+              <div class="track-level">Icon of Sin — Final</div>
+            </div>
+            <div class="track-wave" aria-hidden="true">
+              <div class="wave-bar" style="height:18px"></div>
+              <div class="wave-bar" style="height:8px"></div>
+              <div class="wave-bar" style="height:24px"></div>
+              <div class="wave-bar" style="height:12px"></div>
+              <div class="wave-bar" style="height:20px"></div>
+              <div class="wave-bar" style="height:16px"></div>
+              <div class="wave-bar" style="height:10px"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGACY -->
+<section id="legacy">
+  <div class="legacy-inner">
+    <div class="section-label reveal">Impacto Cultural</div>
+    <h2 class="section-title reveal">O Legado<br>Eterno</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:4rem;">
+      <div class="legacy-timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-year">DEZEMBRO 1993</div>
+          <div class="timeline-title">Doom Chega ao Shareware</div>
+          <p class="timeline-desc">Distribuído gratuitamente pela internet como shareware, o episódio 1 pode ser jogado sem custo — uma estratégia revolucionária que transformou Doom no software mais instalado do mundo.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1994</div>
+          <div class="timeline-title">Nascimento do Deathmatch</div>
+          <p class="timeline-desc">O modo multijogador de Doom via LAN populariza o conceito de deathmatch. Empresas passam a restringir Doom em redes corporativas pela improdutividade gerada.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">SETEMBRO 1994</div>
+          <div class="timeline-title">Doom II: Hell on Earth</div>
+          <p class="timeline-desc">Lançado como produto comercial completo, sem shareware. Vendeu milhões de cópias e ficou entre os mais rentáveis do ano. A Super Shotgun vira lenda imediatamente.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1995–1997</div>
+          <div class="timeline-title">O Boom dos Clones</div>
+          <p class="timeline-desc">Doom deflagra uma indústria inteira. Duke Nukem 3D, Quake, Blood e dezenas de outros FPS surgem tentando replicar a fórmula. O gênero explode.</p>
+        </div>
+      </div>
+      <div class="legacy-timeline reveal" style="transition-delay:0.2s">
+        <div class="timeline-item">
+          <div class="timeline-year">1997</div>
+          <div class="timeline-title">Código-Fonte Liberado</div>
+          <p class="timeline-desc">John Carmack libera o código-fonte do Doom ao público. Nasce um ecossistema de source ports — GZDoom, Chocolate Doom, PrBoom — que mantêm o jogo vivo até hoje.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2000s</div>
+          <div class="timeline-title">Comunidade de Mods</div>
+          <p class="timeline-desc">A comunidade de WADs (arquivos de dados customizados) cresce exponencialmente. Megawads completos, total conversions e megaprojetos como Freedoom demonstram a longevidade do engine.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2016</div>
+          <div class="timeline-title">Doom — O Renascimento</div>
+          <p class="timeline-desc">Doom (2016) revive a franquia com estrondoso sucesso crítico e comercial. A filosofia do original — rápido, violento, sem parar — volta a dominar o cenário dos shooters.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">HOJE</div>
+          <div class="timeline-title">Doom É Eterno</div>
+          <p class="timeline-desc">Doom roda em geladeiras, câmeras digitais, osciloscópios e impressoras. A piada virou lei: se tem tela, tem Doom. O jogo de 1993 nunca parou de ser jogado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATORS -->
+<section id="creators">
+  <div class="creators-inner">
+    <div class="section-label reveal">id Software</div>
+    <h2 class="section-title reveal">Os Criadores<br>do Inferno</h2>
+    <div class="creators-grid">
+      <div class="creator-card reveal">
+        <div class="creator-initial">C</div>
+        <div class="creator-name">John Carmack</div>
+        <div class="creator-role">Programação / Motor Gráfico</div>
+        <p class="creator-bio">O gênio por trás do id Tech 1. Carmack escreveu um motor 3D de alta velocidade em C que rodava em PCs comuns de 1993. Sua contribuição técnica foi comparada à de Einstein na física.</p>
+      </div>
+      <div class="creator-card reveal" style="transition-delay:0.1s">
+        <div class="creator-initial">R</div>
+        <div class="creator-name">John Romero</div>
+        <div class="creator-role">Design de Níveis / Direção</div>
+        <p class="creator-bio">O arquiteto dos mapas infernais. Romero projetou os labirintos icônicos de Doom com um senso estético e ritmo que poucos designers alcançaram. Também o rosto público da id Software.</p>
+      </div>
+      <div class="creator-card reveal" style="transition-delay:0.2s">
+        <div class="creator-initial">A</div>
+        <div class="creator-name">Adrian Carmack</div>
+        <div class="creator-role">Arte / Direção Visual</div>
+        <p class="creator-bio">O artista que deu vida visual ao inferno. Adrian criou os sprites dos demônios, as texturas das paredes e a paleta sombria e visceral que tornou Doom visualmente inconfundível.</p>
+      </div>
+      <div class="creator-card reveal" style="transition-delay:0.3s">
+        <div class="creator-initial">H</div>
+        <div class="creator-name">Sandy Petersen</div>
+        <div class="creator-role">Design de Níveis</div>
+        <p class="creator-bio">Contratado a meio caminho do desenvolvimento, Petersen criou 2/3 dos mapas de Doom em tempo recorde. Seu estilo caótico e não-linear complementou perfeitamente o trabalho de Romero.</p>
+      </div>
+    </div>
+    <div style="margin-top:4rem;padding:3rem;background:var(--pit);border-left:3px solid var(--blood);" class="reveal">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--bone);letter-spacing:0.04em;margin-bottom:1rem;">id Software — Mesquite, Texas — 1991</p>
+      <p style="font-size:1rem;line-height:1.8;color:var(--ash);max-width:800px;">Fundada por John Carmack, John Romero, Adrian Carmack, Tom Hall e Jay Wilbur, a id Software já havia lançado Wolfenstein 3D (1992) antes de Doom. A empresa redefiniu os limites do possível em desenvolvimento de jogos através de inovação técnica radical e disposição para empurrar limites culturais.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">DOOM</div>
+  <div class="footer-copy">
+    <p>© 1993–1995 id Software. Doom e Doom II são marcas registradas da id Software, LLC.</p>
+    <p style="margin-top:0.5rem;opacity:0.5">Este site é um tributo fan-made sem fins comerciais.</p>
+  </div>
+</footer>
+
+<!-- External script -->
+<script src="script.js"></script>
+
+</body>
+</html>

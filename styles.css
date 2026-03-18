@@ -1,0 +1,1151 @@
+:root {
+    --blood: #c0392b;
+    --hellfire: #e74c3c;
+    --ember: #e67e22;
+    --sulfur: #f39c12;
+    --bone: #f5f0e8;
+    --ash: #bdc3c7;
+    --smoke: #95a5a6;
+    --dark: #0a0a0a;
+    --pit: #111111;
+    --void: #1a0a0a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--bone);
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* SCANLINE OVERLAY */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 60px;
+    background: rgba(10,10,10,0.92);
+    border-bottom: 2px solid var(--blood);
+    backdrop-filter: blur(6px);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+    color: var(--hellfire);
+    text-shadow: 0 0 20px var(--blood);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--ash);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s, text-shadow 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--hellfire);
+    text-shadow: 0 0 12px var(--blood);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 70%, rgba(192,57,43,0.18) 0%, transparent 70%),
+      linear-gradient(180deg, #0a0a0a 0%, #1a0505 60%, #0a0a0a 100%);
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(192,57,43,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192,57,43,0.07) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+  }
+
+  @keyframes gridShift {
+    from { transform: translateY(0); }
+    to   { transform: translateY(60px); }
+  }
+
+  .hero-year-left, .hero-year-right {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(8rem, 20vw, 18rem);
+    line-height: 1;
+    opacity: 0.04;
+    user-select: none;
+    letter-spacing: -0.02em;
+  }
+  .hero-year-left  { left: -2rem; top: 50%; transform: translateY(-50%); }
+  .hero-year-right { right: -2rem; top: 50%; transform: translateY(-50%); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    color: var(--ember);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(7rem, 22vw, 20rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    color: var(--bone);
+    text-shadow:
+      0 0 60px rgba(192,57,43,0.7),
+      0 0 120px rgba(192,57,43,0.3),
+      0 2px 0 #600,
+      0 4px 0 #400;
+    animation: fadeUp 1s 0.15s ease both, flicker 8s 2s infinite;
+  }
+
+  @keyframes flicker {
+    0%,95%,100% { opacity: 1; }
+    96% { opacity: 0.88; }
+    97% { opacity: 1; }
+    98% { opacity: 0.92; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    letter-spacing: 0.3em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 3rem;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .hero-meta-item .val {
+    font-size: 2.2rem;
+    color: var(--hellfire);
+    display: block;
+    text-shadow: 0 0 20px var(--blood);
+  }
+
+  .hero-meta-item .lbl {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--smoke);
+    text-transform: uppercase;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--smoke);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeUp 1s 1s ease both;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(var(--blood), transparent);
+    animation: pulse 1.5s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scaleY(1); }
+    50%      { opacity: 0.4; transform: scaleY(0.6); }
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    padding: 8rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--blood);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: var(--bone);
+    text-shadow: 0 0 40px rgba(192,57,43,0.4);
+  }
+
+  /* ── LORE ── */
+  #lore {
+    background: var(--void);
+    border-top: 1px solid rgba(192,57,43,0.2);
+  }
+
+  .lore-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .lore-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+
+  .lore-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--ash);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .lore-text p strong {
+    color: var(--bone);
+    font-weight: 700;
+  }
+
+  .lore-quote {
+    border-left: 3px solid var(--blood);
+    padding: 1.5rem 2rem;
+    background: rgba(192,57,43,0.06);
+    margin: 2rem 0;
+  }
+
+  .lore-quote p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--bone);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .lore-quote cite {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--smoke);
+    letter-spacing: 0.2em;
+    margin-top: 0.75rem;
+    display: block;
+  }
+
+  .lore-ascii {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    color: var(--blood);
+    opacity: 0.5;
+    white-space: pre;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  /* ── GAMES ── */
+  #games {
+    background: var(--dark);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .games-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .games-header {
+    margin-bottom: 5rem;
+  }
+
+  .games-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .game-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--pit);
+  }
+
+  .game-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: saturate(0.3) brightness(0.5);
+  }
+
+  .game-card:hover .game-card-bg {
+    transform: scale(1.05);
+    filter: saturate(0.6) brightness(0.65);
+  }
+
+  /* Doom 1 bg — pixel art mosaic simulation */
+  .doom1-bg {
+    background: 
+      radial-gradient(circle at 30% 40%, rgba(192,57,43,0.6) 0%, transparent 50%),
+      radial-gradient(circle at 70% 60%, rgba(230,126,34,0.3) 0%, transparent 40%),
+      linear-gradient(135deg, #1a0000 0%, #3d0a0a 40%, #0a0a0a 100%);
+  }
+
+  /* Doom 2 bg */
+  .doom2-bg {
+    background:
+      radial-gradient(circle at 60% 30%, rgba(192,57,43,0.5) 0%, transparent 50%),
+      radial-gradient(circle at 20% 70%, rgba(120,20,20,0.6) 0%, transparent 40%),
+      linear-gradient(135deg, #0a0000 0%, #1a0505 40%, #2a0a0a 100%);
+  }
+
+  .game-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(10,0,0,0.96) 0%,
+      rgba(10,0,0,0.4) 50%,
+      transparent 100%
+    );
+  }
+
+  .game-card-content {
+    position: absolute;
+    inset: 0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .game-tag {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--bone);
+    background: var(--blood);
+    padding: 0.35rem 0.75rem;
+  }
+
+  .game-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 10vw, 9rem);
+    line-height: 0.85;
+    color: var(--bone);
+    text-shadow:
+      0 0 40px rgba(192,57,43,0.8),
+      0 2px 0 #600;
+    letter-spacing: -0.01em;
+  }
+
+  .game-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--hellfire);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+
+  .game-year-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--ember);
+    border: 1px solid var(--ember);
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .game-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ash);
+    font-weight: 300;
+    max-width: 340px;
+    margin-bottom: 2rem;
+  }
+
+  .game-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .game-stat {
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .game-stat .n {
+    font-size: 1.5rem;
+    color: var(--hellfire);
+    display: block;
+    text-shadow: 0 0 15px var(--blood);
+  }
+
+  .game-stat .l {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--smoke);
+    text-transform: uppercase;
+  }
+
+  /* ── ARSENAL / WEAPONS ── */
+  #arsenal {
+    background: var(--void);
+    border-top: 1px solid rgba(192,57,43,0.15);
+  }
+
+  .arsenal-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .weapons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 4rem;
+    background: rgba(192,57,43,0.1);
+  }
+
+  .weapon-card {
+    background: var(--pit);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .weapon-card:hover {
+    background: rgba(192,57,43,0.08);
+  }
+
+  .weapon-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--blood);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .weapon-card:hover::before { transform: scaleX(1); }
+
+  .weapon-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(192,57,43,0.5));
+  }
+
+  .weapon-slot {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .weapon-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--bone);
+    margin-bottom: 0.75rem;
+  }
+
+  .weapon-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--smoke);
+    font-weight: 300;
+  }
+
+  .weapon-dmg {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .weapon-dmg-bar {
+    height: 4px;
+    flex: 1;
+    background: rgba(192,57,43,0.15);
+    transition: background 0.3s;
+  }
+
+  .weapon-dmg-bar.fill {
+    background: var(--blood);
+  }
+
+  /* ── BESTIARY ── */
+  #bestiary {
+    background: var(--dark);
+  }
+
+  .bestiary-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .enemy-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+    background: rgba(192,57,43,0.06);
+  }
+
+  .enemy-card {
+    background: var(--pit);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .enemy-card:hover {
+    background: rgba(192,57,43,0.05);
+  }
+
+  .enemy-hp-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px;
+    background: var(--blood);
+    transition: width 0.8s ease;
+    width: 0;
+  }
+
+  .enemy-card:hover .enemy-hp-bar {
+    width: 100%;
+  }
+
+  .enemy-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--blood);
+    opacity: 0.3;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .enemy-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--bone);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .enemy-game-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--ember);
+    background: rgba(230,126,34,0.1);
+    border: 1px solid rgba(230,126,34,0.3);
+    padding: 0.15rem 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .enemy-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--smoke);
+  }
+
+  /* ── MUSIC ── */
+  #music {
+    background: var(--void);
+    border-top: 1px solid rgba(192,57,43,0.15);
+  }
+
+  .music-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .music-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+
+  .music-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .music-player-shell {
+    background:
+      linear-gradient(180deg, rgba(192,57,43,0.1) 0%, rgba(10,10,10,0.92) 18%, rgba(10,10,10,0.98) 100%);
+    border: 1px solid rgba(192,57,43,0.28);
+    box-shadow:
+      inset 0 0 0 1px rgba(230,126,34,0.08),
+      0 0 30px rgba(192,57,43,0.12);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .music-player-shell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(192,57,43,0.04), transparent);
+    pointer-events: none;
+  }
+
+  .music-player-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .music-panel-label,
+  .music-group-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--blood);
+    text-transform: uppercase;
+  }
+
+  .music-group-title {
+    margin-top: 0.5rem;
+    margin-bottom: -0.5rem;
+  }
+
+  .music-status-line {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--smoke);
+    text-transform: uppercase;
+  }
+
+  .music-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blood);
+    box-shadow: 0 0 12px rgba(192,57,43,0.8);
+    animation: pulseStatus 1.5s ease infinite;
+  }
+
+  @keyframes pulseStatus {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.72); opacity: 0.45; }
+  }
+
+  .music-now-playing-box {
+    border-left: 2px solid var(--blood);
+    background: rgba(192,57,43,0.06);
+    padding: 1rem 1.1rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .music-now-playing-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    color: var(--ember);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  #now-playing {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--bone);
+    margin-bottom: 0.35rem;
+  }
+
+  #now-playing-origin {
+    font-size: 0.9rem;
+    color: var(--smoke);
+    line-height: 1.6;
+  }
+
+  .doom-player {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .music-help {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--smoke);
+    position: relative;
+    z-index: 1;
+  }
+
+  .music-help strong {
+    color: var(--bone);
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .track-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    background: var(--pit);
+    cursor: pointer;
+    transition: background 0.25s, border-left-color 0.25s, transform 0.2s, box-shadow 0.25s;
+    border: none;
+    border-left: 2px solid transparent;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+  }
+
+  .track-item:hover,
+  .track-item:focus-visible {
+    background: rgba(192,57,43,0.08);
+    border-left-color: var(--blood);
+    outline: none;
+    transform: translateX(4px);
+  }
+
+  .track-item.is-active {
+    background: linear-gradient(90deg, rgba(192,57,43,0.22) 0%, rgba(192,57,43,0.08) 100%);
+    border-left-color: var(--hellfire);
+    box-shadow: inset 0 0 0 1px rgba(192,57,43,0.12);
+  }
+
+  .track-item.is-active .track-name {
+    color: var(--bone);
+  }
+
+  .track-item.is-active .track-num {
+    color: var(--ember);
+  }
+
+  .track-item.is-active .wave-bar {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(192,57,43,0.38);
+    animation: equalizerPulse 0.8s ease-in-out infinite alternate;
+  }
+
+  .track-item.is-active .wave-bar:nth-child(2n) {
+    animation-duration: 0.55s;
+  }
+
+  .track-item.is-active .wave-bar:nth-child(3n) {
+    animation-duration: 1s;
+  }
+
+  @keyframes equalizerPulse {
+    from { transform: scaleY(0.65); }
+    to { transform: scaleY(1.12); }
+  }
+
+  .track-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--smoke);
+    width: 3.2rem;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .track-info { flex: 1; }
+
+  .track-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ash);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .track-level {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--smoke);
+    margin-top: 0.2rem;
+  }
+
+  .track-wave {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    min-width: 33px;
+  }
+
+  .wave-bar {
+    width: 3px;
+    background: var(--blood);
+    border-radius: 1px;
+    opacity: 0.3;
+    transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+    transform-origin: bottom;
+  }
+
+  .track-item:hover .wave-bar,
+  .track-item:focus-visible .wave-bar { opacity: 1; }
+
+  /* ── LEGACY ── */
+  #legacy {
+    background: var(--dark);
+  }
+
+  .legacy-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .legacy-timeline {
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .legacy-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(var(--blood), transparent);
+  }
+
+  .timeline-item {
+    padding: 0 0 3rem 3rem;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0.5rem;
+    width: 9px;
+    height: 9px;
+    background: var(--blood);
+    border: 2px solid var(--dark);
+  }
+
+  .timeline-year {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--bone);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--smoke);
+    max-width: 600px;
+  }
+
+  /* ── CREATORS ── */
+  #creators {
+    background: var(--void);
+    border-top: 1px solid rgba(192,57,43,0.15);
+  }
+
+  .creators-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .creators-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+    background: rgba(192,57,43,0.06);
+  }
+
+  .creator-card {
+    background: var(--pit);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .creator-card:hover { background: rgba(192,57,43,0.07); }
+
+  .creator-initial {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--blood);
+    opacity: 0.15;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .creator-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--bone);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+
+  .creator-role {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .creator-bio {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--smoke);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--pit);
+    border-top: 2px solid rgba(192,57,43,0.2);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--blood);
+    text-shadow: 0 0 20px rgba(192,57,43,0.4);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-copy {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--smoke);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── PIXEL DECORATIONS ── */
+  .pixel-skull {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background:
+      /* skull shape pixel art */
+      var(--blood);
+    mask:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect x='2' y='0' width='4' height='1'/%3E%3Crect x='1' y='1' width='6' height='1'/%3E%3Crect x='0' y='2' width='8' height='2'/%3E%3Crect x='1' y='4' width='6' height='1'/%3E%3Crect x='1' y='5' width='2' height='2'/%3E%3Crect x='5' y='5' width='2' height='2'/%3E%3C/svg%3E") no-repeat center/contain;
+    -webkit-mask:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect x='2' y='0' width='4' height='1'/%3E%3Crect x='1' y='1' width='6' height='1'/%3E%3Crect x='0' y='2' width='8' height='2'/%3E%3Crect x='1' y='4' width='6' height='1'/%3E%3Crect x='1' y='5' width='2' height='2'/%3E%3Crect x='5' y='5' width='2' height='2'/%3E%3C/svg%3E") no-repeat center/contain;
+  }
+
+  /* HEALTH BAR */
+  .health-hud {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 500;
+    font-family: 'Share Tech Mono', monospace;
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(192,57,43,0.3);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    pointer-events: none;
+  }
+
+  .hud-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--smoke);
+  }
+
+  .hud-val {
+    color: var(--hellfire);
+    font-size: 1rem;
+    text-shadow: 0 0 10px var(--blood);
+    min-width: 2.5rem;
+    text-align: right;
+  }
+
+  /* reveal animation on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 5rem 1.5rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .lore-grid,
+    .music-grid,
+    .games-cards { grid-template-columns: 1fr; }
+    .music-player-head { flex-direction: column; align-items: flex-start; }
+    .weapons-grid { grid-template-columns: 1fr 1fr; }
+    .enemy-list  { grid-template-columns: 1fr 1fr; }
+    .creators-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .weapons-grid,
+    .enemy-list,
+    .creators-grid { grid-template-columns: 1fr; }
+  }
