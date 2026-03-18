@@ -1,6 +1,6 @@
 # DOOM Tribute Site
 
-Este projeto é um site temático inspirado nos jogos clássicos **DOOM (1993)** e **DOOM II**, desenvolvido por mim **Magno** com foco em estética retrô, identidade visual intensa e homenagem ao impacto cultural da franquia criada pela id Software.
+Este projeto é um site temático inspirado nos jogos clássicos **DOOM (1993)** e **DOOM II**, desenvolvido por mim **Magno A. Frutuoso** com foco em estética retrô, identidade visual intensa e homenagem ao impacto cultural da franquia criada pela id Software.
 
 O site foi construído para apresentar, de forma visual e imersiva, elementos marcantes do universo clássico de DOOM, reunindo história, ambientação, arsenal, bestiário, trilha sonora, legado e criadores do jogo em uma experiência única para fãs de FPS antigos.
 
